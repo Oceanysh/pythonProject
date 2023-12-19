@@ -72,4 +72,6 @@ del persons[0]
 del persons[0]
 print(persons)
 
-# 组织列表  测试win10机器项目配置情况
+# 3.3组织列表  测试win10机器项目配置情况
+
+
