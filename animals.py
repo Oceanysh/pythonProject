@@ -73,5 +73,91 @@ del persons[0]
 print(persons)
 
 # 3.3组织列表  测试win10机器项目配置情况
+# sort 永久排序
+print(animals)
+animals.append('dog')
+animals.append('lion')
+animals.append('bird')
 
+print("orginal list")
+print(animals)
+
+# 按首字母顺序排序
+animals.sort()
+print(animals)
+
+# 按首字母倒序排序
+animals.sort(reverse=True)
+print(animals)
+
+# 3.3.2 sorted()临时排序
+print(sorted(animals))
+print("orginal list")
+print(animals)
+
+
+# 3.3.3 倒序打印
+animals.reverse()
+print("倒序打印")
+print(animals)
+print("恢复原顺序")
+animals.reverse()
+print(animals)
+
+
+# 3.3.4 获取长度 len() python的长度从1开始
+lenth = len(animals)
+print(lenth)
+
+
+# 3-8 practice
+places = ['beijing', 'tianjin', 'haerbin',  'wuhan']
+print('original list')
+print(places)
+print('sorted list')
+print(sorted(places))
+print('daoxu sorted list')
+
+# 这样输出有问题 并没有倒序！！！
+sorted(places,reverse=True)
+print(places)
+
+# 处理方案
+# 1、拿变量存储
+# 2、直接输出
+print(sorted(places,reverse=True))
+sorted_places = sorted(places,reverse=True)
+print(sorted_places)
+
+print("now list")
+print(places)
+places.reverse()
+print('reverse list')
+print(places)
+print('reverse again list')
+places.reverse()
+print(places)
+
+print("now list")
+print(places)
+places.sort()
+print('sort places')
+print(places)
+# 这样输出有问题 并没有倒序！！！
+sorted(places,reverse= True)
+print('daoxu sort places')
+print(places)
+
+# 修改方案
+places.sort(reverse=True)
+print(places)
+
+
+
+
+
+# 3-9 places 长度
+print(places)
+places_lenth = len(places)
+print(places_lenth)
 
