@@ -74,3 +74,13 @@ lifang_squares = [value**3 for value in range(1,11)]
 print(lifang_squares)
 
 
+# 4.4 切片
+players =['bob','john','amy', 'neri','bruce']
+print(players[0:1])
+print(players[2:4])
+print(players[:4])
+print(players[2:])
+print(players[-2:])
+
+for player in players[0:3]:
+    print(player.title())
