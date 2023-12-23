@@ -75,7 +75,7 @@ print(lifang_squares)
 
 
 # 4.4 切片
-players =['bob','john','amy', 'neri','bruce']
+players = ['bob','john','amy', 'neri','bruce']
 print(players[0:1])
 print(players[2:4])
 print(players[:4])
@@ -84,3 +84,51 @@ print(players[-2:])
 
 for player in players[0:3]:
     print(player.title())
+
+# 拷贝副本
+copy_players = players[:]
+print(copy_players)
+# print("copy de" +copy_players) 这样输出报错 TypeError: can only concatenate str (not "list") to str
+
+players.append('feifei')
+copy_players.append('pangpang')
+print(players)
+print(copy_players)
+
+# 赋值
+new_players = players
+players.append('fat')
+print(players)
+print(new_players)
+
+# 4-10 到 4-12 练习
+
+print('=============================')
+print('=============================')
+# 4-10 切片
+players = ['bob','john','amy', 'neri','bruce']
+print(players[0:3])
+print(players[1:4])
+print(players[-3:])
+
+# 4-11
+print('=============================')
+print('=============================')
+players = ['bob','john','amy', 'neri','bruce']
+nice_players = players[:]
+nice_players.append('tt')
+players.append('aa')
+print(players)
+print(nice_players)
+
+# 4-12
+print('=============================')
+print('=============================')
+players = ['bob','john','amy', 'neri','bruce']
+for player in players:
+    print(player)
+
+print('=============================')
+print('=============================')
+
+# 4.5 元祖
