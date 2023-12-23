@@ -131,4 +131,27 @@ for player in players:
 print('=============================')
 print('=============================')
 
-# 4.5 元祖
+# 4.5 元祖 重点：不可修改
+dimensions = (2,10)
+print(dimensions[0])
+
+# dimensions[1] = 22
+# 打印此值会报错TypeError: 'tuple' object does not support item assignment，因为不可修改
+
+for dimension in dimensions:
+    print(dimension)
+
+dimensions = (20,22)
+print('\n modified ')
+for dimension in dimensions:
+    print(dimension)
+
+# 4-13
+foods  = ('rice', 'noodle', 'coke', 'juice', 'sugar')
+foods = ('tomato', 'potato', 'coke', 'juice', 'sugar')
+for food in foods:
+    print(food)
+
+
+
+
