@@ -149,4 +149,15 @@ for user in new_users:
     else:
         print('name not use')
 
-number_ten = [1,2,3,4,5,6,7,8,9,10]
+number_ten = ['1','2','3','4','5','6','7','8','9','10']
+for num in number_ten:
+    if num == 1:
+        print('\n1st')
+    elif num == 2:
+        print('\n2nd')
+    elif num == 3:
+        print('\n3rd')
+    else:
+        print(num + 'th')
+# print(num + 'th') number_ten为int类型数组时
+# 输出报错TypeError: unsupported operand type(s) for +: 'int' and 'str'
