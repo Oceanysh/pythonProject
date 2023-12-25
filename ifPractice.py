@@ -98,3 +98,55 @@ if 'peach' in fruits:
 
 
 
+# 5。4
+for fruit in fruits:
+    if fruit == 'apple':
+        print('is tough')
+    else:
+        print('is soft')
+
+favorite_fruits = []
+if favorite_fruits:
+    print('jj')
+    for fruit in favorite_fruits:
+        print('aa')
+else:
+    print('bb')
+
+avaiable_fruits =  ['apple', 'orange', 'banana']
+requested_fruits =  ['apple', 'orange']
+for fruit in requested_fruits:
+    if fruit in avaiable_fruits:
+        print('you can buy it')
+    else:
+        print("you can't buy it")
+
+# 5.5课后练习
+
+names = ['admin', 'david', 'john', 'amy', 'neri']
+for name in names:
+    if name == 'admin':
+        print('hello admin')
+    else:
+        print('hello ' + name + 'welcome')
+
+names = []
+if names:
+  for name in names:
+    if name == 'admin':
+        print('hello admin')
+    else:
+        print('hello ' + name + 'welcome')
+else:
+    print('we need to find some uers')
+
+current_names = ['kat', 'bob', 'lucy', 'bruce', 'nick']
+new_users =  ['Kat', 'david', 'john', 'bruce', 'neri']
+
+for user in new_users:
+    if user.lower() in  current_names:
+        print('current_name ' + user)
+    else:
+        print('name not use')
+
+number_ten = [1,2,3,4,5,6,7,8,9,10]
