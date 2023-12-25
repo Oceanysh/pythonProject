@@ -14,7 +14,11 @@ if 'bmw' in cars:
 if 'bench' not in cars:
     print('not in  判断列表是否不包含某元素')
 
-
+car = 'bench'
+print('is car == bench i think is ture')
+print(car == 'bench')
+print('\nis car == audi i think is false')
+print(car == 'audi')
 
 fruit = 'apple'
 if fruit != 'banana':
@@ -30,4 +34,67 @@ if (age > 21) and (fruit == 'apple'):
 
 if (age > 22) or (fruit == 'apple'):
     print('or 连接判断多个条件')
+
+# 5.2课后练习
+number_flag = 2
+if number_flag == 1:
+    print('判断为 true')
+else:
+    print('判断为 false')
+
+zz = 'now'
+if zz.title() == 'Now':
+    print('title test')
+if zz.lower()== 'Now':
+    print('title test')
+else:
+    print('\nlower test not pass')
+
+if 'honqi' not in cars:
+    print('not in again')
+elif 'audi' in cars:
+    print('in again')
+
+if 'audi' in cars:
+    print('in again')
+
+# 5。3课后练习
+alien_color = 'green'
+if alien_color == 'green':
+    print('you get five point')
+
+if alien_color == 'green':
+    print('you get five point')
+else:
+    print('you get 10 point')
+
+
+if alien_color == 'green':
+    print('you get five point')
+elif alien_color == 'yellow':
+    print('you get 10 point')
+elif alien_color == 'red':
+    print('you get 15 point')
+
+age = 25
+if age < 2 :
+    print('he is baby')
+elif 2 <= age <= 4 :
+    print('he study walk')
+elif 4 < age <= 13 :
+    print('he is a chlidren')
+elif 13 < age <= 20 :
+    print('he is a teenager')
+elif 20 < age <= 65 :
+    print('he is a adult')
+elif 65 < age :
+    print('he is a oldman')
+
+fruits = ['apple', 'orange', 'banana']
+if 'apple' in fruits:
+    print('in here')
+if 'peach' in fruits:
+    print('\npeachein here')
+
+
 
