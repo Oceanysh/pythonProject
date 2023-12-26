@@ -23,7 +23,7 @@ print(alien_1)
 # 跟踪外星人移动轨迹
 alien_2 = {'x_position': 0 , 'y_position': 20, 'speed': 'medium'}
 print('orginal x_position: ' + str(alien_2['x_position']))
-if alien_2['speed'] == 'fast':
+if alien_2['speed'] == 'slow':
     x_increment = 1
 elif alien_2['speed'] == 'medium':
     x_increment = 2
@@ -32,6 +32,34 @@ else :
 alien_2['x_position'] = alien_2['x_position'] + x_increment
 print('new x_position: ' + str(alien_2['x_position']))
 
+#  彻底删除某字典值
+del alien_2['speed']
+print(alien_2)
+
+# 类似对象组成字典
+favorite_languages = {
+    'jen': 'python',
+    'john': 'c',
+    'mike': 'rust',
+    'amy': 'Java'
+}
+print('amy favorite language is ' +
+    favorite_languages['amy'])
 
 
+# 课后练习
+neri = {
+    'first_name': 'neri',
+    'last_name': 'young',
+    'age': 23,
+    'city': 'beijing'
+}
+print('his first_name is '+
+      neri['first_name'].title() +
+      '\nhis last_name is '+
+      neri['last_name'].title() +
+      '\nhis age is '+
+      str(neri['age']) +
+      '\nhis city is '+
+      neri['city'])
 
