@@ -41,10 +41,63 @@ favorite_languages = {
     'jen': 'python',
     'john': 'c',
     'mike': 'rust',
-    'amy': 'Java'
+    'amy': 'Java',
+    'luck': 'c'
 }
 print('amy favorite language is ' +
     favorite_languages['amy'])
+
+# 遍历该语言
+for name, language in favorite_languages.items():
+    print(name.title() + "'s favorite_language is " +
+          language.title())
+
+print("====================")
+print("====================")
+
+# 遍历key
+for name in favorite_languages.keys():
+    print(name.title())
+print("====================")
+print("====================")
+# 可以不写显示的.keys()
+for name in favorite_languages:
+    print(name.title())
+# 用keys()检查
+if 'leslie' not in favorite_languages.keys():
+    print("please commit leslie!")
+print("====================")
+print("====================")
+# 顺序遍历key
+for name in sorted(favorite_languages.keys()):
+    print(name.title())
+print("====================")
+print("遍历所有值")
+for language in favorite_languages.values():
+    print(language.title())
+print("====================")
+print("遍历所有值并用 set 剔除重复项")
+for language in set(favorite_languages.values()):
+    print(language.title())
+
+
+print("====================")
+print("创建应该会接受调查的名单，遍历此名单，感谢已经参加的，邀请未参加的")
+friends = ['jen', 'john', 'kanye']
+for friend in friends:
+    if friend in favorite_languages.keys():
+        print(friend + " thank you come")
+    else:
+        print(friend + " welcome come")
+print("====================")
+for name in favorite_languages.keys():
+    print(name.title())
+    if name in friends:
+        print(name + " thank you come")
+    else:
+        print(name + " welcome come")
+
+
 
 
 # 课后练习
@@ -63,3 +116,25 @@ print('his first_name is '+
       '\nhis city is '+
       neri['city'])
 
+# 6.3 遍历字典
+for key, value in neri.items():
+    print("\nkey: " + key)
+    print("value: " + str(value))
+
+# 6.3 课后练习
+
+rivers = {
+    'nile': 'egypt',
+    'china': 'huanghe',
+    'china': 'changjiang',
+    'american': 'mxxbh'
+}
+
+for country, name in rivers.items():
+    print('The ' + name.title() + ' run through ' + country.title())
+# 打印河流名字 两个china的key，打印了最后一个value
+for river_name in rivers.values():
+    print("河流名字是 " + river_name)
+# 打印国家 两个china 同样只打印了一个
+for river_country in rivers:
+    print("河流所在国家是：" + river_country)
