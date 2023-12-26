@@ -138,3 +138,150 @@ for river_name in rivers.values():
 # 打印国家 两个china 同样只打印了一个
 for river_country in rivers:
     print("河流所在国家是：" + river_country)
+print("==============================================")
+
+
+# 6.4嵌套 列表里嵌套字典 字典里嵌套列表
+aliens = [alien_0, alien_1, alien_2]
+print(aliens)
+
+# 创建一个存储外星人的空列表
+now_aliens = []
+# 创建30个外星人
+for alien_number in range(30):
+    new_alien = {'color': 'green','point': 5,'speed':'slow'}
+    now_aliens.append(new_alien)
+print(now_aliens)
+# 显示前3个外星人
+for three_alien in now_aliens[ :3]:
+    print(three_alien)
+# 显示创建多少个外星人
+print(str(len(now_aliens)))
+
+for alien in now_aliens[0:5]:
+    if alien['color'] == 'green':
+        print('test')
+        alien['color'] = 'red'
+        alien['speed'] = 'fast'
+for alien in now_aliens[0:7]:
+    print(alien)
+
+# 字典中存储列表 一个键关联多个值时用到
+anmianls ={
+    'type' : 'cat-type',
+    'name' : ['tiger', 'lion']
+}
+print(anmianls['name'])
+
+print("==============================================")
+# 字典中存储字典
+
+# 6-7
+# 创建一个空列表
+people = []
+# 随机生成3个人的字典
+for person in range(3):
+    new_person = {'color': 'green','point': 5}
+    people.append(new_person)
+print(people)
+
+# 6-8
+# 创建空列表
+pets = []
+# 创建字典
+cat = {
+    'type': 'land',
+    'home_name': 'neri'
+}
+dog = {
+    'type': 'land',
+    'home_name': 'bruce'
+}
+pets = [cat, dog]
+print(pets)
+for pet in pets:
+    print('宠物生活环境 ' +
+          pet['type'] +
+          ' 宠物家的名字 ' +
+          pet['home_name'])
+
+print("==============================================")
+
+# 6-9
+favorite_places = {
+    'neri': ['beijing', 'shanghai'],
+    'lucy': 'guangzhou',
+    'nick': ['haerbin', 'wuhan', 'lanzhou']
+}
+
+# 报错写法 TypeError: list indices must be integers or slices, not str
+# for person_name, place in favorite_places.items():
+#     print(place['name'] +
+#           ", he like " +
+#           place['place'])
+
+# 修改后
+favorite_places = {
+    'neri': ['beijing', 'shanghai'],
+    # 'lucy': 'guangzhou', 单值最后也用列表，不然后续 \t 制表符会导致格式不统一
+    'lucy': ['guangzhou'],
+    'nick': ['haerbin', 'wuhan', 'lanzhou']
+}
+
+# 正确写法 可能用列表存储的值，单独用for循环处理
+for person_name, places in favorite_places.items():
+    print("\n" + person_name.title() +
+          ' favorite_places is : ')
+    for place in places:
+        print("\t" + place.title())
+
+print("==============================================")
+
+# 6-10
+
+person_numbers = {
+    'jen': ['1', '2', '4'],
+    'john': ['1', '2', '4', '5'],
+    'mike': ['1', '2'],
+    'amy':  ['1'],
+    'luck': []
+}
+for person_name,person_number in person_numbers.items():
+    print(" he/she 's name is " + person_name.title() )
+    for number in person_number:
+        print(" and he/she 's like " + number)
+
+
+
+print("==============================================")
+# 6-11
+cities = {
+    'beijing':{
+        'country': 'china',
+        'people': '1M',
+        'journey': 'The Great Wall'
+    },
+    'shanghai':{
+        'country': 'china',
+        'people': '0.5M',
+        'journey': 'wai tan'
+    },
+    'fuzhou': {
+        'country': 'china',
+        'people': '0.1M',
+        'journey': 'dd'
+    }
+}
+
+for city, city_info in cities.items():
+    print('this city is '
+          + city +
+          ' belongs to ' +
+          city_info['country'] +
+          'there are ' +
+          city_info['people'] +
+          ' population ' +
+          'recommend place is ' +
+          city_info['journey'])
+
+print("==============================================")
