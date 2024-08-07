@@ -107,6 +107,21 @@
 #         break
 #     if message != 'quit':
 #         print(message)
+pizza_toppings = []
+print("欢迎使用披萨配料选择器!")
+print("请输入你想要的披萨配料,每次一种。输入'quit'结束。")
+
+while True:
+    message = input("请输入一种披萨配料: ").lower()
+    if message == 'quit':
+        break
+    pizza_toppings.append(message)
+    print(f"已添加 {message} 到你的披萨中。")
+
+print("\n你的披萨配料包括:")
+for topping in pizza_toppings:
+    print(f"- {topping}")
+print("谢谢使用,祝你的披萨美味!")
 
 # movie_message = "your cost for movie depends on your age: "
 # while movie_message != '':
@@ -171,15 +186,15 @@
 #     sandwich_orders.remove('pastrami')
 # print(sandwich_orders)
 
-places = {}
-actice = True
-while actice:
-    name = input("\nwhat's your name? ")
-    place = input("\nIf you could visit one place in the world, where would you go? ")
-    places[name] = place
-    repeat = input("anyone want say yes/no")
-    if repeat == 'no':
-        actice = False
-print("\n======================")
-for name, place in places.items():
-    print(name + ' want to go ' + place)
+# places = {}
+# actice = True
+# while actice:
+#     name = input("\nwhat's your name? ")
+#     place = input("\nIf you could visit one place in the world, where would you go? ")
+#     places[name] = place
+#     repeat = input("anyone want say yes/no")
+#     if repeat == 'no':
+#         actice = False
+# print("\n======================")
+# for name, place in places.items():
+#     print(name + ' want to go ' + place)
