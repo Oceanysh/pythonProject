@@ -5,7 +5,6 @@ from datetime import datetime
 
 class FakerDemo:
     def __init__(self):
-        # Instantiate the Faker object with "zh-CN" for generating Chinese data
         self.fake = Faker("zh-CN")
 
     def calculate_age(self, zjbh):
@@ -25,9 +24,9 @@ class FakerDemo:
         if fznl < 46:
             if fznl < 16:
                 l_zjyxq = 5
-            elif fznl >= 16 and fznl < 26:
+            elif 16 <= fznl < 26:
                 l_zjyxq = 10
-            elif fznl >= 26 and fznl < 46:
+            elif 26 <= fznl < 46:
                 l_zjyxq = 20
         else:
             l_zjyxq = None
@@ -40,9 +39,20 @@ class FakerDemo:
 
         return zjjzrq
 
+    def get_yhdm(self, yyb):
+        if yyb == 1:
+            yhdm = "54001"#57001 交行
+        elif yyb == 405:
+            yhdm = "74001"#77001 交行
+        elif yyb == 7021:
+            yhdm = "44001"#47001 交行
+        else:
+            yhdm = ""
+        return yhdm
+
     def person(self, count):
         msg = ""
-        yyb_values = [1, 479, 7021]  #营业部
+        yyb_values = [1, 405, 7021]  # 营业部
         for i in range(count):
             num = i + 1
             while True:
@@ -58,12 +68,13 @@ class FakerDemo:
             KHMC = self.fake.unique.name()
             ZJLB = 0
             yyb = random.choice(yyb_values)  # 从营业部里随机选择一个
-            msg += f"{KHMC},{ZJLB},{ZJBH},{zjjzrq},{yyb}\n"
+            yhdm = self.get_yhdm(yyb)
+            msg += f"{KHMC},{ZJLB},{ZJBH},{zjjzrq},{yyb},{yhdm}\n"
         return msg
 
 if __name__ == '__main__':
     f = FakerDemo()
-    data = f.person(1000)
+    data = f.person(40000)
 
-    with open("sanyaosu2024032201.csv", 'w') as d:
+    with open("sanyaosu2024072600.csv", 'w') as d:
         d.write(data)
