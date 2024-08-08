@@ -40,19 +40,18 @@ class FakerDemo:
         return zjjzrq
 
     def get_yhdm(self, yyb):
-        if yyb == 1:
-            yhdm = "54001"#57001 交行
-        elif yyb == 405:
-            yhdm = "74001"#77001 交行
-        elif yyb == 7021:
-            yhdm = "44001"#47001 交行
-        else:
-            yhdm = ""
-        return yhdm
+        yyb_to_yhdm = {
+            1: "54001",
+            405: "74001",
+            7021: "44001"
+        }
+        return yyb_to_yhdm.get(yyb, "")
 
     def person(self, count):
         msg = ""
-        yyb_values = [1, 405, 7021]  # 营业部
+        yyb_values = [1, 405, 7021]
+        unique_names = set()
+
         for i in range(count):
             num = i + 1
             while True:
@@ -60,21 +59,28 @@ class FakerDemo:
                 age = self.calculate_age(ZJBH)
                 if 19 <= age <= 69:
                     break
+
             csrq = ZJBH[6:14]
             zjqsrq = "20200307"
             fznl = self.calculate_fznl(csrq, zjqsrq)
             zjjzrq = self.calculate_zjjzrq(fznl)
 
-            KHMC = self.fake.unique.name()
+            while True:
+                KHMC = self.fake.name()
+                if KHMC not in unique_names:
+                    unique_names.add(KHMC)
+                    break
+
             ZJLB = 0
-            yyb = random.choice(yyb_values)  # 从营业部里随机选择一个
+            yyb = random.choice(yyb_values)
             yhdm = self.get_yhdm(yyb)
             msg += f"{KHMC},{ZJLB},{ZJBH},{zjjzrq},{yyb},{yhdm}\n"
+
         return msg
 
 if __name__ == '__main__':
     f = FakerDemo()
     data = f.person(1000000)
 
-    with open("sanyaosu2024080800.csv", 'w') as d:
+    with open("sanyaosu2024080802.csv", 'w') as d:
         d.write(data)
