@@ -127,4 +127,55 @@ print(feifei.age)
 feifei.increment_login_attempts()
 feifei.reset_login_attempts()
 
+# ---------------------------------------------
+# 9.3
+
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type):
+        """初始化父类属性"""
+        super().__init__(restaurant_name, cuisine_type)
+        """添加一个名为 flavors 的属性，用于 存储一个由各种口味的冰淇淋组成的列表。"""
+        self.flavors = []
+    def show_flavors(self):
+        """编写一个显示这些冰淇淋的方法。"""
+        if self.flavors:
+            print("冰淇淋有：" + ", ".join(self.flavors))
+        else:
+            print("目前没有冰淇淋")
+    def add_flavors(self, flavors):
+        self.flavors.append(flavors)
+
+ice = IceCreamStand('hagendasi', 'icecream')
+ice.add_flavors('aa')
+ice.add_flavors('bb')
+ice.show_flavors()
+
+# ------------------------------------------------
+
+
+class Privileges():
+    def __init__(self,privileges = []):
+        self.privileges = privileges
+    def show_privileges(self):
+        if self.privileges:
+            print('权限有： ' + '，'.join(self.privileges))
+        else:
+            print('没权限')
+    def add_privileges(self, privileges):
+        self.privileges.append(privileges)
+
+class Admin(User):
+    def __init__(self, first_name, last_name, age, login_attempts ):
+        super().__init__( first_name, last_name, age, login_attempts )
+        self.privileges = Privileges()
+
+
+
+admin = Admin('fei', 'fei', '12', 'aa')
+admin.privileges.add_privileges('can add post')
+admin.privileges.add_privileges('can delete post')
+admin.privileges.add_privileges('can ban user')
+admin.privileges.show_privileges()
+
+# ------------------------------------------------
 
