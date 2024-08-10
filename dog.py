@@ -164,6 +164,7 @@ class Privileges():
     def add_privileges(self, privileges):
         self.privileges.append(privileges)
 
+
 class Admin(User):
     def __init__(self, first_name, last_name, age, login_attempts ):
         super().__init__( first_name, last_name, age, login_attempts )
