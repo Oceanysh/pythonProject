@@ -244,3 +244,8 @@ print(my_LiXiang.get_descriptive_name())
 my_LiXiang.battery.upgrade_battery()
 my_LiXiang.battery.describe_battery()
 my_LiXiang.battery.get_range()
+
+# -----------------------------------------------------------------------------
+
+# 9.4
+
