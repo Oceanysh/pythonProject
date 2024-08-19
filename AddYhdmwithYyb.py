@@ -74,7 +74,7 @@ class FakerDemo:
 
 if __name__ == '__main__':
     f = FakerDemo()
-    data = f.person(1000000)
+    data = f.person(40000)
 
-    with open("sanyaosu2024080800.csv", 'w') as d:
+    with open("sanyaosu2024081600.csv", 'w') as d:
         d.write(data)
